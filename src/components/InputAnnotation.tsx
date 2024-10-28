@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 export interface InputAnnotationProps {
-  text: string
-  type?: 'info' | 'error'
-  showIcon?: boolean
-  darkMode?: boolean
+  text: string;
+  type?: 'info' | 'error';
+  showIcon?: boolean;
+  darkMode?: boolean;
 }
 
 export const InputAnnotation: React.FC<InputAnnotationProps> = ({
@@ -13,7 +13,7 @@ export const InputAnnotation: React.FC<InputAnnotationProps> = ({
   showIcon = false,
   darkMode = false,
 }) => {
-  const color = type === 'error' ? 'red' : 'gray'
+  const color = type === 'error' ? 'red' : 'gray';
   const annotationStyle = {
     marginTop: '4px',
     color: darkMode ? (type === 'error' ? 'red' : 'lightgray') : color,
@@ -22,13 +22,13 @@ export const InputAnnotation: React.FC<InputAnnotationProps> = ({
     textOverflow: 'ellipsis',
     display: 'flex',
     alignItems: 'center',
-  } as React.CSSProperties
+  } as React.CSSProperties;
 
-  const icon = type === 'error' ? '⚠️' : 'ℹ️'
+  const icon = type === 'error' ? '⚠️' : 'ℹ️';
   return (
     <div style={annotationStyle}>
       {showIcon && <span style={{ marginRight: '4px' }}>{icon}</span>}
       {text}
     </div>
-  )
-}
+  );
+};
